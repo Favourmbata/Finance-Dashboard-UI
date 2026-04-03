@@ -37,13 +37,13 @@ export default function InsightsSection() {
   const expenses = transactions.filter(t => t.type === 'expense');
   const incomes  = transactions.filter(t => t.type === 'income');
 
-  // Category breakdown
+
   const catMap = {};
   expenses.forEach(t => { catMap[t.category] = (catMap[t.category] || 0) + t.amount; });
   const catData = Object.entries(catMap).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value);
   const topCat = catData[0];
 
-  // Monthly comparison
+
   const monthMap = {};
   transactions.forEach(t => {
     const m = t.date.slice(0, 7);
@@ -58,11 +58,11 @@ export default function InsightsSection() {
     ? ((currMonth[1].expense - prevMonth[1].expense) / (prevMonth[1].expense || 1) * 100).toFixed(1)
     : null;
 
-  // Avg monthly spend
+ 
   const totalExpense = expenses.reduce((s, t) => s + t.amount, 0);
   const avgMonthly = months.length > 0 ? (totalExpense / months.length).toFixed(0) : 0;
 
-  // Best saving month
+  
   const bestMonth = months.reduce((best, [m, v]) => {
     const saving = v.income - v.expense;
     return saving > (best?.saving ?? -Infinity) ? { month: m, saving } : best;
@@ -73,7 +73,7 @@ export default function InsightsSection() {
 
   return (
     <div className="space-y-6">
-      {/* Insight cards */}
+     
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
         <InsightCard
           icon={Award}
@@ -109,7 +109,7 @@ export default function InsightsSection() {
         />
       </div>
 
-      {/* Category bar chart */}
+      
       <div className={`rounded-xl p-5 shadow-sm border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'}`}>
         <h2 className={`text-sm font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Expenses by Category</h2>
         {catData.length === 0 ? (
@@ -131,7 +131,7 @@ export default function InsightsSection() {
         )}
       </div>
 
-      {/* Monthly income vs expense */}
+      
       <div className={`rounded-xl p-5 shadow-sm border ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'}`}>
         <h2 className={`text-sm font-semibold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}`}>Monthly Income vs Expenses</h2>
         {months.length === 0 ? (

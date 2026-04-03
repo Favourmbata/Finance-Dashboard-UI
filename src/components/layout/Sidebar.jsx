@@ -13,7 +13,7 @@ export default function Sidebar({ open, onClose }) {
 
   return (
     <>
-      {/* Overlay for mobile */}
+      
       {open && (
         <div
           className="fixed inset-0 bg-black/40 z-20 lg:hidden"
@@ -31,7 +31,7 @@ export default function Sidebar({ open, onClose }) {
           border-r
         `}
       >
-        {/* Logo */}
+        
         <div className={`flex items-center justify-between px-6 py-5 border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
@@ -46,7 +46,7 @@ export default function Sidebar({ open, onClose }) {
           </button>
         </div>
 
-        {/* Nav */}
+     
         <nav className="flex-1 px-3 py-4 space-y-1">
           {navItems.map(({ id, label, icon: Icon }) => (
             <button
@@ -68,7 +68,7 @@ export default function Sidebar({ open, onClose }) {
           ))}
         </nav>
 
-        {/* Footer */}
+      
         <div className={`px-6 py-4 border-t text-xs ${darkMode ? 'border-gray-700 text-gray-500' : 'border-gray-200 text-gray-400'}`}>
           Finance Dashboard v1.0
         </div>

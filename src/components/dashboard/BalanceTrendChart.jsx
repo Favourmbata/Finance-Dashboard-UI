@@ -6,7 +6,7 @@ import { useApp } from '../../context/AppContext';
 function buildMonthlyData(transactions) {
   const map = {};
   transactions.forEach(t => {
-    const month = t.date.slice(0, 7); // YYYY-MM
+    const month = t.date.slice(0, 7); 
     if (!map[month]) map[month] = { income: 0, expenses: 0 };
     if (t.type === 'income')  map[month].income   += t.amount;
     else                      map[month].expenses += t.amount;

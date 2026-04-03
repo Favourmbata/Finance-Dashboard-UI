@@ -55,7 +55,7 @@ export default function TransactionsTable() {
 
   return (
     <div>
-      {/* Filters bar */}
+    
       <div className="flex flex-wrap gap-3 mb-4">
         <div className="relative flex-1 min-w-48">
           <Search size={15} className={`absolute left-3 top-1/2 -translate-y-1/2 ${darkMode ? 'text-gray-400' : 'text-gray-400'}`} />
@@ -85,7 +85,7 @@ export default function TransactionsTable() {
         )}
       </div>
 
-      {/* Table */}
+      
       <div className={`rounded-xl border overflow-hidden ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
         <div className="overflow-x-auto">
           <table className="w-full">

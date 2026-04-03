@@ -30,7 +30,7 @@ export default function Header({ onMenuClick }) {
       </div>
 
       <div className="flex items-center gap-2 sm:gap-3">
-        {/* Role switcher */}
+ 
         <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-sm font-medium ${
           darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'
         }`}>
@@ -52,7 +52,7 @@ export default function Header({ onMenuClick }) {
           </select>
         </div>
 
-        {/* Dark mode toggle */}
+        
         <button
           onClick={() => dispatch({ type: 'TOGGLE_DARK' })}
           className={`p-2 rounded-lg transition-colors ${

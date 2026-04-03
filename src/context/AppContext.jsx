@@ -7,16 +7,16 @@ const STORAGE_KEY = 'finance_dashboard_state';
 
 const initialState = {
   transactions: mockTransactions,
-  role: 'viewer', // 'viewer' | 'admin'
+  role: 'viewer', 
   darkMode: false,
   filters: {
     search: '',
-    type: 'all',      // 'all' | 'income' | 'expense'
+    type: 'all',      
     category: 'all',
-    sortBy: 'date',   // 'date' | 'amount'
-    sortDir: 'desc',  // 'asc' | 'desc'
+    sortBy: 'date',   
+    sortDir: 'desc',  
   },
-  activeTab: 'dashboard', // 'dashboard' | 'transactions' | 'insights'
+  activeTab: 'dashboard',
 };
 
 function reducer(state, action) {
